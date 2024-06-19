@@ -6,14 +6,20 @@ using System.Threading.Tasks;
 
 namespace PracticaFutbol.Models
 {
-    internal class EquipoLocal : Equipo, IPartido
+    public class EquipoLocal : Equipo, IPartido
     {
-        public EquipoLocal(string nombre, string jugador, string entrenador)
-            : base (nombre, jugador, entrenador) { } //Para poder heredar una clase hay que pasarle los atributos antes.
+        // Constructor
+        public EquipoLocal(string nombre, string entrenador) : base(nombre, entrenador) { }
 
-         public void simularPartido() //Para poder heredar la Interfaz hay que pasarle los metodos.
+        public string SimularPartido()
         {
+            return "Simulación del partido como equipo local";
+        }
 
+        // Devuelve el nombre del equipo
+        public override string ToString()
+        {
+            return this.Nombre;
         }
     }
 }

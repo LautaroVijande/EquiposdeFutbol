@@ -6,42 +6,34 @@ using System.Threading.Tasks;
 
 namespace PracticaFutbol.Models
 {
-    internal class Equipo
+    public class Equipo
     {
-        public string nombre { get; set; }
+        public int Id { get; set; }
+        public string Nombre { get; set; }
+        public string Entrenador { get; set; }
+        public List<jugador> Jugadores { get; set; }
 
-        public List<jugador> jugadores { get; set; }
-
-        public string entrenador { get; set; }
-
-        public Equipo (string nombre, string jugadores, string entrenador)
+        public Equipo(string nombre, string entrenador)
         {
-            this.nombre = nombre;
-
-            this.jugadores = new List<jugador>();
-
-            this.entrenador = entrenador;
+            this.Nombre = nombre;
+            this.Entrenador = entrenador;
+            Jugadores = new List<jugador>();
         }
 
-        public void agregarJugador(jugador jugador)
+        public void AgregarJugador(jugador jugador)
         {
-            jugadores.Add(jugador);
+            Jugadores.Add(jugador);
         }
 
-        public void quitarJugador (jugador jugador)
+        public bool BuscarJugador(string nombre)
         {
-            jugadores.Remove(jugador);
+            return Jugadores.Exists(j => j.Nombre == nombre);
         }
 
-        public List<jugador> obtenerJugadores()
+        public void BorrarJugador(jugador jugador)
         {
-            return jugadores;
+            Jugadores.Remove(jugador);
+            Console.WriteLine($"Se eliminó el jugador {jugador} correctamente");
         }
-
-        public void cambiarEntrenador(string nuevoEntrenador)
-        {
-            entrenador = nuevoEntrenador;
-        }
-
     }
 }

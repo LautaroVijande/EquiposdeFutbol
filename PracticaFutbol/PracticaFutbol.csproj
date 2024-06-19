@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Entrenadores.cs" />
     <Compile Include="Models\Equipo.cs" />
     <Compile Include="Models\EquipoLocal.cs" />
     <Compile Include="Models\EquipoVisitante.cs" />

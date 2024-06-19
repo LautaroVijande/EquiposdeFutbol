@@ -4,10 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace PracticaFutbol.Models
 {
     interface IPartido
     {
-        void simularPartido();
+
+        public interface IPartido
+        {
+            string SimularPartido();
+        }
     }
 }

@@ -6,9 +6,20 @@ using System.Threading.Tasks;
 
 namespace PracticaFutbol.Models
 {
-    class EquipoVisitante : Equipo
+    public class EquipoVisitante : Equipo, IPartido
     {
-        public EquipoVisitante(string nombre, string jugador, string entrenador)
-            : base(nombre, jugador, entrenador) { }
+        // Constructor
+        public EquipoVisitante(string nombre, string entrenador) : base(nombre, entrenador) { }
+
+        public string SimularPartido()
+        {
+            return "Simulación del partido como equipo visitante";
+        }
+
+        // Devuelve el nombre del jugador
+        public override string ToString()
+        {
+            return this.Nombre;
+        }
     }
 }
