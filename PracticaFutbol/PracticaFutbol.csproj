@@ -48,6 +48,7 @@
     <Compile Include="Models\EquipoLocal.cs" />
     <Compile Include="Models\EquipoVisitante.cs" />
     <Compile Include="Models\IPartido.cs" />
+    <Compile Include="Models\IPartido1.cs" />
     <Compile Include="Models\jugador.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
